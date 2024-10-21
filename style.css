@@ -1,0 +1,137 @@
+.heading {
+    display: flex;
+    justify-content: center;
+}
+h1, h3 {
+    font-family: "Dancing Script", cursive;
+    font-size: 60px;
+}
+.one {
+    background-image: url(1-210614-222404.jpeg);
+}
+.two {
+    background-image: url(2-210614-222404.jpeg);
+}
+/* но картинки расположились горизонтально, а нам нужно вертикально */
+.container {
+    display: flex;
+    /* чтобы встали вертикально */
+}
+.item {
+    height: 90vh;
+    /* чтобы при раскрытии картинка была большой, но не на всю страницу */
+    background-size: cover;
+    /* чтобы картинка не двоилась */
+    background-position: center;
+    font-family: "Dancing Script", cursive;
+    flex: 1;
+    /* чтобы занимали одинаковое простанство (поделили его поровну) */
+    margin: 5px;
+    /* чтобы разделить картинки */
+    position: relative;
+}
+/* вставляем остальные изображения */
+.three {
+    background-image: url(3-210614-222404.jpeg);
+}
+.four {
+    background-image: url(4-210614-222404.jpeg);
+}
+.five {
+    background-image: url(5-210614-222404.jpeg);
+}
+.six {
+    background-image: url(6-210614-222404.jpeg);
+}
+body {
+    background-color: #faf1e6;
+}
+h4 {
+    /* чтобы позиционировать h4, нужно позиционировать его относительно родителя.
+    родитель у нас не container, а div с классом item. ставим у родителя position relative,
+    а ребенку - h4 ставим posotion: absolute */
+    position: absolute;
+    /* теперь можно сделать отступы сверху, слева */
+    top: 15px;
+    left: 40px;
+    /* сейчас весь текст смешался, но остальное подвинем позже */
+    color: black;
+    background-color: #fff;
+}
+.par {
+    position: absolute;
+    /* потому что он тоже ребенок в div */
+    top: 100px;
+    left: 40px;
+    color: black;
+    background-color: #fff;
+}
+.price {
+    position: absolute;
+    bottom: 40px;
+    /* чтобыв не писать огромный отступ сверху */
+    left: 40px;
+    color: black;
+    background-color: #fff;
+}
+.selected {
+    flex: 4;
+    /* чтобы стал широким. но они все поочереди будут растягиваться
+    нужно, чтобы остальные не растягивалисьб но сначала в html поставим на первый
+    элемент этот класс по умолчанию, чтобы при загрузке страницы первый слайд
+    всегда сначала был широким. теперь в js нужно сделать функцию, чтобы этот класс убирался
+    при убирании мышки со слайда */
+}
+.selected h4 {
+    /* чтобы стиль был именно на тот h4,который selected */
+    font-size: 40px;
+    /* шрифт становится больше */
+    transition: all 1s ease-in;
+    /* появление через секунду и летит */
+}
+.selected .par {
+    font-size: 20px;
+    transition: all 1s ease-in;
+}
+.selected .price {
+    font-size: 35px;
+    transition: all 1s ease-in;
+}
+/* чтобы удалить текст с невыбранных элементов, можно в стилях сделать
+font-size: 0px 
+OR
+добавить ко всем opacity: 0; 
+но тогда везде исчезнет. в таком случае нужно на selected добавить opacity: 1; 
+пишу тут отдельно, чтобы заранее выше не запутаться для чего это: */
+h4, .par, .price {
+    opacity: 0;
+}
+.selected h4, .selected .par, .selected .price{
+opacity: 1;
+}
+label {
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+}
+/* добавляем placeholder (текст для пользователя) в поле с email и message через html 
+и добавляем class для стиля поля */
+.text-input {
+    background-color: #faf1e6;
+    border: none;
+    padding: 12px 20px;
+}
+/* далее работаем с кнопкой */
+.btn {
+    background-color: #00adb5;
+    font-family: "Dancing Script", cursive;
+    font-size: 30px;
+    /* чтобы растянуть кнопку на всю страницу, добавляем flex:1 (т.к. это
+    ребенок родителя, у которого уже display: flex */
+    flex: 1;
+}
+/* теперь можно проверить работу анкеты:
+в моем аккаунте на formspree.io зайти в раздел Submissions, там будут все входящие сообщения */
+
+/* поменять язык, который отображается на сайте при отправке письма:
+в html после <form> пишу: <input type="hidden" name="_language" value="en"> (тут менять язык) 
+список сокращенных языков есть на этом же сайте форм */

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- делаем заголовок и добавляем на него стиль. т.к. мы будем перемещать заголовок, то пишем его в div -->
+    <div class="heading">
+        <h1>We are finally open</h1>
+    </div>
+    <!-- добавляем слайд, в котором будет картинка, заголовок, текст и цена. всё помещаем в div
+        так делаем с каждым слайдом и всё потом а общий div -->
+        <!-- добавляем на родительский div class (container) -->
+    <div class="container">
+        <!-- 1 -->
+        <!-- для добавления картинки (толькл картинки) через css добавляем class (one, two...) на div-ребенка -->
+        <!-- для добавления одинаковых для всех свойств создаем один class (item) для всех слайдов -->
+        <div class="item one selected">
+            <h4>Berta</h4>
+            <p class="par">interchangeable sectional sofa-bed with storage</p>
+            <p class="price">$5000</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="item two">
+            <h4>Beldravia</h4>
+            <p class="par">sofa-bed with memory foam mattress</p>
+            <p class="price">$2000</p>
+        </div>
+
+        <!-- 3 -->
+        <div class="item three">
+            <h4>Foodien</h4>
+            <p class="par">recycled teak end table</p>
+            <p class="price">$1000</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="item four">
+            <h4>Family</h4>
+            <p class="par">acacia wood dining table</p>
+            <p class="price">$2500</p>
+        </div>
+
+        <!-- 5 -->
+        <div class="item five">
+            <h4>Shean</h4>
+            <p class="par">tufted velvet sofa-bed</p>
+            <p class="price">$2100</p>
+        </div>
+
+        <!-- 6 -->
+        <div class="item six">
+            <h4>Rabia</h4>
+            <p class="par">tufted upholstered wingback queen size bed with storage</p>
+            <p class="price">$5000</p>
+        </div>
+
+    </div>
+
+    <!-- добавляем анкету с классом как у заголовка с сайта https://formspree.io/ -->
+    <div class="heading">
+        <h3>Send us a message!</h3>
+    </div>
+
+<!-- форма -->
+<form
+    action="https://formspree.io/f/myzyzzly"
+    method="POST">
+
+    <input type="hidden" name="_language" value="en">
+
+    <!-- чтобы иметь возможность позиционировать все поля, оборачиваем их всех 
+    в разные div и добавляем class с позиционированием heading -->
+    <div class="heading">    
+        <label>
+            Your email:
+            <input type="email" class="text-input" name="replyto" placeholder="Your email..." required="">
+        </label>
+    </div>
+
+    <div class="heading">
+        <label>
+            Your message:
+            <textarea name="message" class="text-input" placeholder="Type your message..." required=""></textarea>
+        </label>
+    </div>
+
+    <br>  <!-- чтобы появилось пространство между полями и кнопкой -->
+
+    <!-- your other form fields go here -->
+    <div class="heading">
+        <button class="btn" type="submit">Send</button>
+    </div>
+<!-- далее через css добавляем стиль на поля анкеты -->
+</form>
+
+<!-- теперь можно проверить работу анкеты:
+в моем аккаунте на formspree.io зайти в раздел Submissions, там будут все входящие сообщения -->
+
+<!-- поменять язык, который отображается на сайте при отправке письма:
+в html после <form> пишу: <input type="hidden" name="_language" value="en"> (тут менять язык) 
+список сокращенных языков есть на этом же сайте форм -->
+
+<!-- чтобы пользователь не смог отправить пустую форму (обязательно заполнил её), добавляем 
+слово required="" в обоих полях -->
+
+    <script src="index.js"></script>
+</body>
+</html>
