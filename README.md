@@ -1,2 +1,2 @@
-# janetmois.github.io
+# janetmois-slides.github.io
 Slides
